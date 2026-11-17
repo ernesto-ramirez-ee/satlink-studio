@@ -1,0 +1,305 @@
+{
+  "schemaVersion": 2,
+  "notes": "Hand-curated RF specs (docs/DATA_SOURCES.md). Each downlink value is either backed by the URLs in `sources` or listed in `assumed`. FM voice is modelled as a 15 kHz noise bandwidth with a 10 dB CNR threshold (dataRateBps = 15000, requiredEbN0Db = 10).",
+  "satellites": [
+    {
+      "noradId": 25544,
+      "name": "ISS (ZARYA)",
+      "orbit": "LEO",
+      "tleGroup": "stations",
+      "downlinks": [
+        {
+          "id": "iss-fm",
+          "label": "ARISS FM voice",
+          "modulation": "FM voice",
+          "freqHz": 145800000,
+          "polarization": "linear",
+          "eirpDbw": 9,
+          "dataRateBps": 15000,
+          "requiredEbN0Db": 10,
+          "sources": [
+            "https://www.ariss.org/contact-the-iss.html",
+            "https://db.satnogs.org/api/transmitters/?satellite__norad_cat_id=25544&format=json"
+          ],
+          "assumed": ["polarization", "eirpDbw", "dataRateBps", "requiredEbN0Db"],
+          "notes": "ARISS: the radio is limited to 25 W on the ISS. EIRP assumes ~10 W into a ~0 dBi antenna with 1 dB of cable loss."
+        },
+        {
+          "id": "iss-aprs",
+          "label": "APRS packet digipeater",
+          "modulation": "AFSK 1200 bd on FM",
+          "freqHz": 145825000,
+          "polarization": "linear",
+          "eirpDbw": 9,
+          "dataRateBps": 1200,
+          "requiredEbN0Db": 23,
+          "sources": [
+            "https://www.ariss.org/contact-the-iss.html",
+            "https://db.satnogs.org/api/transmitters/?satellite__norad_cat_id=25544&format=json"
+          ],
+          "assumed": ["polarization", "eirpDbw", "requiredEbN0Db"],
+          "notes": "ARISS: packet runs at about 10 W. AFSK through an FM receiver needs ~12 dB CNR in 15 kHz, i.e. Eb/N0 ≈ 23 dB at 1200 bit/s (assumed)."
+        }
+      ]
+    },
+    {
+      "noradId": 57166,
+      "name": "METEOR-M2 3",
+      "orbit": "LEO",
+      "tleGroup": "weather",
+      "downlinks": [
+        {
+          "id": "m23-lrpt",
+          "label": "LRPT weather images",
+          "modulation": "QPSK, conv. r = 1/2 + RS",
+          "freqHz": 137900000,
+          "polarization": "rhcp",
+          "eirpDbw": 6,
+          "dataRateBps": 72000,
+          "requiredEbN0Db": 4,
+          "sources": [
+            "https://db.satnogs.org/api/transmitters/?satellite__norad_cat_id=57166&format=json",
+            "https://space.oscar.wmo.int/satellites/view/meteor_m_n2_3"
+          ],
+          "assumed": ["eirpDbw", "requiredEbN0Db"],
+          "notes": "SatNOGS lists 72 and 80 kbit/s LRPT modes on 137.1 and 137.9 MHz (RHCP). Transmitter power was not found in an authoritative source; EIRP assumes ~5 W into a ~0 dBi antenna."
+        }
+      ]
+    },
+    {
+      "noradId": 59051,
+      "name": "METEOR-M2 4",
+      "orbit": "LEO",
+      "tleGroup": "weather",
+      "downlinks": [
+        {
+          "id": "m24-lrpt",
+          "label": "LRPT weather images",
+          "modulation": "QPSK, conv. r = 1/2 + RS",
+          "freqHz": 137900000,
+          "polarization": "rhcp",
+          "eirpDbw": 6,
+          "dataRateBps": 72000,
+          "requiredEbN0Db": 4,
+          "sources": ["https://db.satnogs.org/api/transmitters/?satellite__norad_cat_id=59051&format=json"],
+          "assumed": ["eirpDbw", "requiredEbN0Db"],
+          "notes": "Same LRPT payload as Meteor-M2 3. EIRP assumed (~5 W, ~0 dBi)."
+        }
+      ]
+    },
+    {
+      "noradId": 27607,
+      "name": "SAUDISAT 1C (SO-50)",
+      "orbit": "LEO",
+      "tleGroup": "amateur",
+      "downlinks": [
+        {
+          "id": "so50-fm",
+          "label": "FM voice repeater",
+          "modulation": "FM voice",
+          "freqHz": 436795000,
+          "polarization": "linear",
+          "eirpDbw": -6,
+          "dataRateBps": 15000,
+          "requiredEbN0Db": 10,
+          "sources": [
+            "https://amsat-uk.org/2013/12/19/11th-birthday-of-ham-radio-satellite-so-50/",
+            "https://db.satnogs.org/api/transmitters/?satellite__norad_cat_id=27607&format=json"
+          ],
+          "assumed": ["polarization", "eirpDbw", "dataRateBps", "requiredEbN0Db"],
+          "notes": "AMSAT-UK: “Its UHF transmitter is a mere 250 mW” (= −6 dBW). EIRP assumes a 0 dBi antenna. Some reports suggest it now puts out less."
+        }
+      ]
+    },
+    {
+      "noradId": 39444,
+      "name": "FUNCUBE-1 (AO-73)",
+      "orbit": "LEO",
+      "tleGroup": "amateur",
+      "downlinks": [
+        {
+          "id": "ao73-bpsk",
+          "label": "BPSK telemetry",
+          "modulation": "BPSK 1200 bd with FEC",
+          "freqHz": 145935000,
+          "polarization": "linear",
+          "eirpDbw": -3,
+          "dataRateBps": 1200,
+          "requiredEbN0Db": 5,
+          "sources": ["https://db.satnogs.org/api/transmitters/?satellite__norad_cat_id=39444&format=json"],
+          "assumed": ["polarization", "eirpDbw", "requiredEbN0Db"],
+          "notes": "EIRP assumes ~0.5 W into a ~0 dBi antenna."
+        }
+      ]
+    },
+    {
+      "noradId": 38771,
+      "name": "METOP-B",
+      "orbit": "LEO",
+      "tleGroup": "weather",
+      "downlinks": [
+        {
+          "id": "metopb-ahrpt",
+          "label": "AHRPT direct readout",
+          "modulation": "QPSK, FEC 3/4",
+          "freqHz": 1701300000,
+          "polarization": "rhcp",
+          "eirpDbw": 10,
+          "dataRateBps": 3500000,
+          "requiredEbN0Db": 5,
+          "sources": [
+            "https://user.eumetsat.int/s3/eup-strapi-media/TD_18_Metop_Direct_Readout_AHRPT_Technical_Description_v3_A_1cb789b653.pdf",
+            "https://db.satnogs.org/api/transmitters/?satellite__norad_cat_id=38771&format=json"
+          ],
+          "assumed": ["eirpDbw", "requiredEbN0Db"],
+          "notes": "EUMETSAT TD 18, Table 3: 1701.3 MHz, RHCP, 3.5 Mbps, QPSK FEC 3/4. EIRP is not stated; the PFD row (≈ −133 dBW/m² per 1.5 MHz) suggests roughly 10–12 dBW, so 10 dBW is assumed."
+        }
+      ]
+    },
+    {
+      "noradId": 43013,
+      "name": "NOAA 20 (JPSS-1)",
+      "orbit": "LEO",
+      "tleGroup": "weather",
+      "downlinks": [
+        {
+          "id": "noaa20-hrd",
+          "label": "X-band HRD direct broadcast",
+          "modulation": "QPSK, 15 Msps per channel",
+          "freqHz": 7812000000,
+          "polarization": "rhcp",
+          "eirpDbw": 5.2,
+          "eirpByElevationDeg": [
+            [5, 13.1],
+            [40, 5.2],
+            [70, 3.6],
+            [90, 1.2]
+          ],
+          "dataRateBps": 15000000,
+          "requiredEbN0Db": 4,
+          "sources": [
+            "https://www.nesdis.noaa.gov/s3/2022-03/JPSS-1SCHRDtoDBSRFICDRevA-470-REF-00184February9,2015.pdf",
+            "https://db.satnogs.org/api/transmitters/?satellite__norad_cat_id=43013&format=json"
+          ],
+          "assumed": ["requiredEbN0Db"],
+          "notes": "JPSS-1 HRD ICD 472-00165 Rev A: “15 Mbps at a nominal downlink frequency of 7812 MHz”, RHCP. The shaped antenna's EIRP vs. elevation is the ICD Table 4-1 capability column (43.1, 35.2, 33.6, 31.2 dBm at 5°, 40°, 70°, 90°)."
+        }
+      ]
+    },
+    {
+      "noradId": 60133,
+      "name": "GOES 19",
+      "orbit": "GEO",
+      "tleGroup": "weather",
+      "downlinks": [
+        {
+          "id": "goes19-hrit",
+          "label": "HRIT/EMWIN",
+          "modulation": "BPSK, conv. r = 1/2 + RS(255,223)",
+          "freqHz": 1694100000,
+          "polarization": "linear",
+          "eirpDbw": 26.7,
+          "dataRateBps": 400000,
+          "requiredEbN0Db": 2.5,
+          "sources": [
+            "https://www.ospo.noaa.gov/operations/goes/hrit/",
+            "https://ospo.noaa.gov/operations/goes/grb/pdf/budget.pdf",
+            "https://db.satnogs.org/api/transmitters/?satellite__norad_cat_id=60133&format=json"
+          ],
+          "assumed": ["requiredEbN0Db"],
+          "notes": "NOAA OSPO: 1694.1 MHz, 400 kbps, BPSK, linear polarization. EIRP 56.7 dBm (26.7 dBW) from the OSPO GRB link-budget sheet (an expected value, based on the NTIA filing)."
+        }
+      ]
+    },
+    {
+      "noradId": 51850,
+      "name": "GOES 18",
+      "orbit": "GEO",
+      "tleGroup": "weather",
+      "downlinks": [
+        {
+          "id": "goes18-hrit",
+          "label": "HRIT/EMWIN",
+          "modulation": "BPSK, conv. r = 1/2 + RS(255,223)",
+          "freqHz": 1694100000,
+          "polarization": "linear",
+          "eirpDbw": 26.7,
+          "dataRateBps": 400000,
+          "requiredEbN0Db": 2.5,
+          "sources": [
+            "https://www.ospo.noaa.gov/operations/goes/hrit/",
+            "https://ospo.noaa.gov/operations/goes/grb/pdf/budget.pdf",
+            "https://db.satnogs.org/api/transmitters/?satellite__norad_cat_id=51850&format=json"
+          ],
+          "assumed": ["requiredEbN0Db"],
+          "notes": "Same HRIT/EMWIN service as GOES 19 (GOES-West)."
+        }
+      ]
+    },
+    {
+      "noradId": 43873,
+      "name": "GPS BIII-1 (PRN 04)",
+      "orbit": "MEO",
+      "tleGroup": "gps-ops",
+      "downlinks": [
+        {
+          "id": "gps-l1ca",
+          "label": "L1 C/A navigation",
+          "modulation": "BPSK, C/A code, 50 bit/s data",
+          "freqHz": 1575420000,
+          "polarization": "rhcp",
+          "eirpDbw": 25.9,
+          "dataRateBps": 50,
+          "requiredEbN0Db": 12,
+          "sources": ["https://archive.gps.gov/technical/icwg/IS-GPS-200N.pdf"],
+          "assumed": ["requiredEbN0Db"],
+          "notes": "IS-GPS-200N: 1575.42 MHz, 50 bps, RHCP; minimum received C/A power −158.5 dBW into a 3 dBi linear antenna above 5° elevation. EIRP 25.9 dBW is derived from that: −158.5 − 3 + 184.4 (FSPL at 25 230 km) + 3 (lin./circ. loss). The real GPS beam is shaped, so higher elevations do a little better than shown."
+        }
+      ]
+    },
+    {
+      "noradId": 33376,
+      "name": "GALAXY 19 (G-19)",
+      "orbit": "GEO",
+      "tleGroup": "geo",
+      "downlinks": [
+        {
+          "id": "g19-ku",
+          "label": "Ku-band free-to-air TV transponder",
+          "modulation": "DVB-S2",
+          "freqHz": 12053000000,
+          "polarization": "linear",
+          "eirpDbw": 47,
+          "dataRateBps": 30000000,
+          "requiredEbN0Db": 6,
+          "sources": ["https://satbeams.com/satellites/2386-galaxy-19"],
+          "assumed": ["freqHz", "polarization", "eirpDbw", "dataRateBps", "requiredEbN0Db"],
+          "notes": "Satbeams confirms 28 Ku-band transponders at 97° W. The transponder (12 053 MHz V) and EIRP (46.5–48.5 dBW over Ohio) come from a LyngSat listing that couldn't be opened to verify, so they are marked assumed."
+        }
+      ]
+    },
+    {
+      "noradId": 44714,
+      "name": "STARLINK-1008",
+      "orbit": "LEO",
+      "tleGroup": "starlink",
+      "downlinks": [
+        {
+          "id": "starlink-ku",
+          "label": "Ku-band user downlink",
+          "modulation": "OFDM (data rate assumed)",
+          "freqHz": 11700000000,
+          "polarization": "rhcp",
+          "eirpDbw": 36.9,
+          "dataRateBps": 100000000,
+          "requiredEbN0Db": 5,
+          "sources": [
+            "https://www.rsm.govt.nz/assets/Uploads/documents/consultations/2018-preparing-for-5g/c4c9f26604/300.3-spacex-submission-preparing-for-5g.pdf"
+          ],
+          "assumed": ["polarization", "eirpDbw", "dataRateBps", "requiredEbN0Db"],
+          "notes": "SpaceX FCC filing (Schedule S attachment): user downlink 10.7–12.7 GHz, EIRP density up to 12.91 dBW/MHz, user beams served at elevations of 40° or more. EIRP assumes a 250 MHz channel (12.91 + 24.0 dB). These figures are for the original 2016 design; current shells may differ."
+        }
+      ]
+    }
+  ]
+}

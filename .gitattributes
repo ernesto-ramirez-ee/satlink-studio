@@ -1,0 +1,4 @@
+# Keep LF line endings in the repo so Windows and Linux (GitHub Actions) agree.
+* text=auto eol=lf
+*.png binary
+*.jpg binary

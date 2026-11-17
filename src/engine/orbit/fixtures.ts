@@ -1,0 +1,55 @@
+// Fixed element sets for tests (copied from the CelesTrak snapshot of 2026-11-10).
+import type { OMMJsonObject } from 'satellite.js'
+
+export const ISS_OMM: OMMJsonObject = {
+  OBJECT_NAME: 'ISS (ZARYA)',
+  OBJECT_ID: '1998-067A',
+  EPOCH: '2026-11-10T04:12:02.822688',
+  MEAN_MOTION: 15.49289712,
+  ECCENTRICITY: 0.00072923,
+  INCLINATION: 51.6322,
+  RA_OF_ASC_NODE: 297.6644,
+  ARG_OF_PERICENTER: 8.9462,
+  MEAN_ANOMALY: 351.1656,
+  EPHEMERIS_TYPE: 0,
+  CLASSIFICATION_TYPE: 'U',
+  NORAD_CAT_ID: 25544,
+  ELEMENT_SET_NO: 999,
+  REV_AT_EPOCH: 59438,
+  BSTAR: 0.0001757453,
+  MEAN_MOTION_DOT: 0.00009346,
+  MEAN_MOTION_DDOT: 0,
+}
+
+export const GOES19_OMM: OMMJsonObject = {
+  OBJECT_NAME: 'GOES 19',
+  OBJECT_ID: '2024-119A',
+  EPOCH: '2026-11-10T06:54:00.470016',
+  MEAN_MOTION: 1.00272638,
+  ECCENTRICITY: 0.00006691,
+  INCLINATION: 0.0034,
+  RA_OF_ASC_NODE: 70.9232,
+  ARG_OF_PERICENTER: 225.8123,
+  MEAN_ANOMALY: 141.0578,
+  EPHEMERIS_TYPE: 0,
+  CLASSIFICATION_TYPE: 'U',
+  NORAD_CAT_ID: 60133,
+  ELEMENT_SET_NO: 999,
+  REV_AT_EPOCH: 842,
+  BSTAR: 0,
+  MEAN_MOTION_DOT: -0.00000239,
+  MEAN_MOTION_DDOT: 0,
+}
+
+/** University of Notre Dame, South Bend, IN. */
+export const NOTRE_DAME = { latDeg: 41.7002, lonDeg: -86.2379, altM: 220 }
+
+/** SGP4 verification case 00005 (Vallado et al., "Revisiting Spacetrack Report #3", 2006). */
+export const VALLADO_00005 = {
+  line1: '1 00005U 58002B   00179.78495062  .00000023  00000-0  28098-4 0  4753',
+  line2: '2 00005  34.2682 348.7242 1859667 331.7664  19.3264 10.82419157413667',
+  /** TEME position (km) at tsince = 0. */
+  r0Km: [7022.46529266, -1400.08296755, 0.03995155],
+  /** TEME velocity (km/s) at tsince = 0. */
+  v0Kms: [1.893841015, 6.405893759, 4.53480725],
+}
