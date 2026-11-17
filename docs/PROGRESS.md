@@ -18,7 +18,13 @@ Newest entry first. Every session adds one entry when it ends.
 
 - Moved `deploy.yml` and `update-tle.yml` into `.github/workflows/`. `setup/` now only holds a note saying it's obsolete; the owner can delete it (the agent's delete was blocked by permissions).
 - README "Publish to GitHub Pages" updated: install Git, set name/email, create an empty public repo, `git init` → push, Settings → Pages → Source "GitHub Actions", then run the deploy workflow once.
-- Still to do (owner): install Git, create the repo, push, enable Pages. Then the agent does the live-site smoke test.
+- Git 2.56 installed (winget). Repo https://github.com/ernesto-ramirez-ee/satlink-studio created by the owner. First commit `7e594a1` (126 files) pushed to `main` from the owner's terminal, after the owner signed in to GitHub in the browser.
+- The owner enabled Pages and ran the deploy. **The site is live:** https://ernesto-ramirez-ee.github.io/satlink-studio/
+- Smoke test (agent):
+  - Over HTTPS, the page, `index.json`, `satellites.json`, `starlink.json` (4.6 MB) and the Earth texture all return 200.
+  - The live `index.html` is identical to the local build, and the main JS bundle has the same SHA-256 (`32BE1B03…`).
+  - The in-app browser can't open external URLs on this install, so the four tabs were exercised on that identical build served locally (`vite preview`): Antenna Lab (39.77 dBi), Sky View (220 sats, ISS passes, globe), Link Check (ISS → monopole, SO-50 → Yagi, GOES 18 → dish 7.5 dB, Meteor-M2 3 → monopole), and Live Steering (3D scene, Starlink beam-hop 11 185 sats / 15 hand-overs). No console errors.
+- **Not yet checked:** "Use my location" on the real HTTPS site (needs a person and the browser permission prompt), and the first scheduled "Update TLE snapshot" run (every 6 h at :17).
 
 ---
 

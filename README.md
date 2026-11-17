@@ -5,7 +5,7 @@ Visualize antenna radiation patterns, see which real satellites are overhead fro
 > Class project, built by an AI agent (Claude) under the direction of the author. Due November 18, 2026.
 > **Agents:** start with [`AGENTS.md`](AGENTS.md).
 
-**Live site:** `https://<your-github-username>.github.io/<repo-name>/` (after the first deploy)
+**Live site:** https://ernesto-ramirez-ee.github.io/satlink-studio/
 
 ## Features
 

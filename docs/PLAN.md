@@ -19,7 +19,7 @@ Tick boxes as items are done. Don't remove items without the owner's OK; move th
 - [x] Folder structure, `AGENTS.md`, and docs
 - [x] GitHub Actions: deploy to Pages, plus a 6-hourly TLE snapshot
 - [x] Units helper (dB ↔ linear, wavelength, FSPL) with tests
-- [ ] Owner creates the GitHub repo, pushes, and enables Pages (see README) — moved to Submit day (D-012)
+- [x] Owner creates the GitHub repo, pushes, and enables Pages (see README) — done Nov 17: https://ernesto-ramirez-ee.github.io/satlink-studio/
 - [ ] First successful TLE snapshot committed by the workflow — a local snapshot exists (`npm run fetch-tle`, Nov 10); the workflow run waits for the repo
 - [ ] Check SatNOGS DB API CORS from the deployed site
 
@@ -45,7 +45,7 @@ Tick boxes as items are done. Don't remove items without the owner's OK; move th
 - [x] Link budget function, tested against a worked example
 - [x] Margin-vs-time plot for the selected pass: one line per antenna, 0 dB line, red failure regions
 - [x] Recommendation card: smallest antenna with ≥ 3 dB margin for the whole pass above 10° elevation, with its reason
-- [ ] **MVP gate:** works on the live site for 3 real satellites from the user's location — passes locally for all 12 satellites (Nov 10); re-check on the live site at deploy (D-012)
+- [x] **MVP gate:** works on the live site for 3 real satellites from the user's location — Nov 17: the live bundle is byte-identical (SHA-256) to the local build, which gives recommendations for ISS, SO-50, GOES 18 and Meteor-M2 3 from Notre Dame
 
 ## Phase 4 — Live Steering (Nov 16–17)
 
