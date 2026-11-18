@@ -14,6 +14,13 @@ Newest entry first. Every session adds one entry when it ends.
 
 ---
 
+## 2026-11-17 — README polished, user guide added (owner request)
+
+- `README.md` rewritten as a clean landing page: tagline, link to the live site, feature table, how it works, run locally, docs links, about and credits. The "Publish to GitHub Pages" section was removed; the setup steps are in this log.
+- New `docs/USER_GUIDE.md`: getting started (location, clock, receiver), each tab step by step, demo tips, troubleshooting and a glossary.
+
+---
+
 ## 2026-11-17 — Ready for GitHub
 
 - Moved `deploy.yml` and `update-tle.yml` into `.github/workflows/`. `setup/` now only holds a note saying it's obsolete; the owner can delete it (the agent's delete was blocked by permissions).
