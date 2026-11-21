@@ -1,26 +1,26 @@
 {
   "fetchedAt": "2026-11-20T00:38:58.932Z",
-  "newestFetchedAt": "2026-11-20T15:29:26.173Z",
+  "newestFetchedAt": "2026-11-20T23:59:43.527Z",
   "groups": {
     "stations": {
       "count": 17,
       "file": "stations.json",
-      "fetchedAt": "2026-11-20T15:29:18.463Z"
+      "fetchedAt": "2026-11-20T23:59:41.106Z"
     },
     "weather": {
       "count": 74,
       "file": "weather.json",
-      "fetchedAt": "2026-11-20T15:29:18.983Z"
+      "fetchedAt": "2026-11-20T23:59:42.061Z"
     },
     "gps-ops": {
       "count": 32,
       "file": "gps-ops.json",
-      "fetchedAt": "2026-11-20T15:29:19.578Z"
+      "fetchedAt": "2026-11-20T23:59:42.603Z"
     },
     "iridium-NEXT": {
       "count": 80,
       "file": "iridium-NEXT.json",
-      "fetchedAt": "2026-11-20T15:29:19.763Z"
+      "fetchedAt": "2026-11-20T23:59:43.527Z"
     },
     "geo": {
       "count": 563,
