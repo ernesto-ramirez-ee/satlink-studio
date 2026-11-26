@@ -1,41 +1,41 @@
 {
-  "fetchedAt": "2026-11-26T08:22:54.157Z",
-  "newestFetchedAt": "2026-11-26T08:22:56.496Z",
+  "fetchedAt": "2026-11-26T21:35:27.605Z",
+  "newestFetchedAt": "2026-11-26T21:36:32.222Z",
   "groups": {
     "stations": {
       "count": 18,
       "file": "stations.json",
-      "fetchedAt": "2026-11-26T08:22:54.157Z"
+      "fetchedAt": "2026-11-26T21:35:27.605Z"
     },
     "weather": {
       "count": 75,
       "file": "weather.json",
-      "fetchedAt": "2026-11-26T08:22:54.392Z"
+      "fetchedAt": "2026-11-26T21:35:38.661Z"
     },
     "gps-ops": {
       "count": 32,
       "file": "gps-ops.json",
-      "fetchedAt": "2026-11-26T08:22:54.524Z"
+      "fetchedAt": "2026-11-26T21:35:45.678Z"
     },
     "iridium-NEXT": {
       "count": 80,
       "file": "iridium-NEXT.json",
-      "fetchedAt": "2026-11-26T08:22:54.684Z"
+      "fetchedAt": "2026-11-26T21:35:57.856Z"
     },
     "geo": {
       "count": 554,
       "file": "geo.json",
-      "fetchedAt": "2026-11-26T08:22:54.830Z"
+      "fetchedAt": "2026-11-26T21:36:05.125Z"
     },
     "amateur": {
       "count": 99,
       "file": "amateur.json",
-      "fetchedAt": "2026-11-26T08:22:54.966Z"
+      "fetchedAt": "2026-11-26T21:36:18.734Z"
     },
     "starlink": {
-      "count": 11194,
+      "count": 11189,
       "file": "starlink.json",
-      "fetchedAt": "2026-11-26T08:22:56.496Z"
+      "fetchedAt": "2026-11-26T21:36:32.222Z"
     }
   }
 }
